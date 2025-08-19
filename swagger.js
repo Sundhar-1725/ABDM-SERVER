@@ -15,6 +15,7 @@ const doc = {
   produces: ["application/json"]
 };
 
+
 const outputFile = "./swagger-output.json";
 const endpointsFiles = ["./app.js"];
 
