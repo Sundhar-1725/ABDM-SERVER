@@ -5,6 +5,7 @@ const service = {
 }
 const api = {
     sessionApi:"https://dev.abdm.gov.in/api/hiecm/gateway/v3/sessions",
-    enrolmentViaAadhartOtpApi:"https://abhasbx.abdm.gov.in/abha/api/v3/enrollment/request/otp"
+    enrolmentViaAadhartOtpApi:"https://abhasbx.abdm.gov.in/abha/api/v3/enrollment/request/otp",
+    enrolmentViaAadhartOtpVerifyApi:"https://abhasbx.abdm.gov.in/abha/api/v3/enrollment/enrol/byAadhaar",
 }
 module.exports = {service,api};
