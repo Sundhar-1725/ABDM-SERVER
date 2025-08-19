@@ -5,10 +5,10 @@
     "description": "Version 1.0",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
-  "basePath": "/",
+  "host": "api.fifpclub.com",
+  "basePath": "/qa",
   "schemes": [
-    "http"
+    "https"
   ],
   "consumes": [
     "application/json"
@@ -17,7 +17,7 @@
     "application/json"
   ],
   "paths": {
-    "/": {
+    "/qa": {
       "get": {
         "description": "",
         "responses": {

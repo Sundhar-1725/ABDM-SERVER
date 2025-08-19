@@ -5,9 +5,9 @@ const doc = {
     title: "HIKE HEALTHGS ABDM APIs",
     description: "Version 1.0"
   },
-  host: "localhost:3000",            
-  basePath: "/",                     
-  schemes: ["http"],                 
+  host: "api.fifpclub.com",            
+  basePath: "/qa",                     
+  schemes: ["https"],                 
   consumes: ["application/json"],    
   produces: ["application/json"]     
 };
