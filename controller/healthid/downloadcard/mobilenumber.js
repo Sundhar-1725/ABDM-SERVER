@@ -2,6 +2,7 @@ const axios = require('axios');
 const uuid = require('uuid');
 const common = require('../../../service/common');
 const callEncryption = require('../../../service/encryption/encryption');
+const e = require('express');
 
 
 exports.searchCardByMobileNumber = async (req, res) => {
@@ -53,6 +54,20 @@ exports.searchCardByMobileNumber = async (req, res) => {
                 message: "Failed to search card",
                 data: error.response ? error.response.data : null
             });
+        }
+        if (error.response && error.response.status === 404) {
+            return res.status(201).json({
+                status: "false",
+                message: "User not found or card not available",
+                data: error.response ? error.response.data : null
+            });
+        }
+        if(error.response && error.response.status === 401) {
+            return res.status(401).json({   
+                status: "false",
+                message: "Unauthorized access. Please check your token.",
+                data: error.response ? error.response.data : null
+            });         
         }
         return res.status(500).json({
             status: "false",
