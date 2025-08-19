@@ -6,7 +6,7 @@ const doc = {
     description: "Version 1.0"
   },
   host: "api.fifpclub.com",
-  basePath: "/qa",
+  basePath: "/",
   schemes: ["https"],
   // host: "localhost:3000",
   // basePath: "/",
