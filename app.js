@@ -13,7 +13,7 @@ app.use('/qa/docs',swaggerUi.serve,swaggerUi.setup(swaggerDocument));
 app.get('/qa', (req, res) => {
     res.send('ABDM BACKEND SERVER IS RUNNING');
 });
-app.use('/api/ABDM',allRoutes);
+app.use('/qa/api/ABDM',allRoutes);
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
