@@ -126,6 +126,123 @@
           }
         }
       }
+    },
+    "/qa/api/ABDM/Health-Id/DownloadABHACardViaMobileNumber/search": {
+      "post": {
+        "tags": [
+          "HealthCard-Download-Via-MobileNumber"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mobile": {
+                  "example": "any"
+                },
+                "token": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/qa/api/ABDM/Health-Id/DownloadABHACardViaMobileNumber/sendOtp": {
+      "post": {
+        "tags": [
+          "HealthCard-Download-Via-MobileNumber"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "loginId": {
+                  "example": "any"
+                },
+                "txnId": {
+                  "example": "any"
+                },
+                "token": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/qa/api/ABDM/Health-Id/DownloadABHACardViaMobileNumber/verifyOtp": {
+      "post": {
+        "tags": [
+          "HealthCard-Download-Via-MobileNumber"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "txnId": {
+                  "example": "any"
+                },
+                "otp": {
+                  "example": "any"
+                },
+                "token": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
     }
   }
 }

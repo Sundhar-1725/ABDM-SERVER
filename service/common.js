@@ -7,5 +7,8 @@ const api = {
     sessionApi:"https://dev.abdm.gov.in/api/hiecm/gateway/v3/sessions",
     enrolmentViaAadhartOtpApi:"https://abhasbx.abdm.gov.in/abha/api/v3/enrollment/request/otp",
     enrolmentViaAadhartOtpVerifyApi:"https://abhasbx.abdm.gov.in/abha/api/v3/enrollment/enrol/byAadhaar",
+    downloadABHACardViaMobileNumberSearchApi:"https://abhasbx.abdm.gov.in/abha/api/v3/profile/account/abha/search",
+    downloadABHACardViaMobileNumberSendOtpApi:"https://abhasbx.abdm.gov.in/abha/api/v3/profile/login/request/otp",
+    downloadABHACardViaMobileNumberVerifyOtpApi:"https://abhasbx.abdm.gov.in/abha/api/v3/profile/login/verify",
 }
 module.exports = {service,api};

@@ -87,7 +87,7 @@ exports.verifyOtp = async (req, res) => {
             message: "Invalid OTP. It should be 6 digits long."
         });
     }
-    if (!txnId || !/^[a-zA-Z0-9-]+$/.test(txnId)) {
+    if (!txnId) {
         return res.status(201).json({
             status: "false",
             message: "Invalid transaction ID format."
