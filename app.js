@@ -9,8 +9,8 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json()); 
 const allRoutes = require('./routes/route');
-app.use('/docs',swaggerUi.serve,swaggerUi.setup(swaggerDocument));
-app.get('/', (req, res) => {
+app.use('/qa/docs',swaggerUi.serve,swaggerUi.setup(swaggerDocument));
+app.get('/qa', (req, res) => {
     res.send('ABDM BACKEND SERVER IS RUNNING');
 });
 app.use('/api/ABDM',allRoutes);
