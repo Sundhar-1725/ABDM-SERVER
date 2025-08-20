@@ -247,7 +247,7 @@ exports.fetchABHACard = async(req,res)=>{
             {}, {
             headers: {
                 Authorization: `Bearer ${token}`,
-                "X-Token": x_token,
+                "X-Token": `Bearer ${x_token}`,
                 "REQUEST-ID": requestId,
                 "TIMESTAMP": timestamp,
             }
@@ -270,6 +270,13 @@ exports.fetchABHACard = async(req,res)=>{
             return res.status(401).json({
                 status: "false",
                 message: "Unauthorized access. Please check your token.",
+                data: error.response ? error.response.data : null
+            });
+        }
+        if(error.response && error.response.status === 405) {
+            return res.status(201).json({
+                status: "false",
+                message: "ABHA Card not found",
                 data: error.response ? error.response.data : null
             });
         }
