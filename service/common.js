@@ -10,5 +10,6 @@ const api = {
     downloadABHACardViaMobileNumberSearchApi:"https://abhasbx.abdm.gov.in/abha/api/v3/profile/account/abha/search",
     downloadABHACardViaMobileNumberSendOtpApi:"https://abhasbx.abdm.gov.in/abha/api/v3/profile/login/request/otp",
     downloadABHACardViaMobileNumberVerifyOtpApi:"https://abhasbx.abdm.gov.in/abha/api/v3/profile/login/verify",
+    fetchABHACard:"https://abhasbx.abdm.gov.in/abha/api/v3/profile/account/abha-card"
 }
 module.exports = {service,api};

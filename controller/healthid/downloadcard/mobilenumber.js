@@ -224,3 +224,59 @@ exports.verifyOtpByMobileNumber = async (req, res) => {
         });
     }
 }
+
+exports.fetchABHACard = async(req,res)=>{
+    // #swagger.tags = ['HealthCard-Download-Via-MobileNumber']
+    const{token,x_token}=req.body;
+    try {
+        if (!token) {
+            return res.status(201).json({
+                status: "false",
+                message: "Missing required fields: token"
+            });
+        }
+        if(!x_token) {
+            return res.status(201).json({
+                status: "false",
+                message: "Missing required fields: x_token"
+            });
+        }
+        const requestId = uuid.v4();
+        const timestamp = new Date().toISOString(); 
+        const response = await axios.post(common.api.fetchABHACard,
+            {}, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                "X-Token": x_token,
+                "REQUEST-ID": requestId,
+                "TIMESTAMP": timestamp,
+            }
+        }); 
+        return res.status(200).json({
+            status: "true",
+            message: "ABHA Card Fetched successfully",
+            data: response.data
+        });
+        
+    } catch (error) {
+        if(error.response && error.response.status === 400) {
+            return res.status(201).json({
+                status: "false",
+                message: "Invalid X-Token",
+                data: error.response ? error.response.data : null
+            });
+        }
+        if(error.response && error.response.status === 401) {
+            return res.status(401).json({
+                status: "false",
+                message: "Unauthorized access. Please check your token.",
+                data: error.response ? error.response.data : null
+            });
+        }
+        return res.status(500).json({
+            status: "false",
+            message: "Internal server error",
+            data: error.message
+        });
+    }
+}
